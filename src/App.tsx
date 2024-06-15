@@ -1,11 +1,8 @@
-import React from 'react'
-
+import Homepage from "./pages/Homepage";
+import { useRoutes } from "react-router-dom";
 const App = () => {
-  return (
-    <>
-    App
-    </>
-  )
-}
+  const routes = useRoutes([{ path: "/", element: <Homepage /> }]);
+  return <>{routes}</>;
+};
 
-export default App
+export default App;
