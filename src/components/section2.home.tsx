@@ -5,7 +5,8 @@ const Section2Home = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["document-count"],
     queryFn: documentCount,
-    gcTime: Infinity
+    gcTime: Infinity,
+    refetchInterval: false
   });
 
   return (
