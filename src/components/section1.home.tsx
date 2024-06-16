@@ -3,7 +3,7 @@ import logo from "../assets/images/logo-quotable.png";
 const Section1Home = () => {
   return (
     <>
-      <section className="h-screen w-screen bg-section-1-bg bg-cover flex items-center justify-center">
+      <section className="h-screen bg-section-1-bg bg-cover flex items-center justify-center">
         <div className="w-120 h-100">
           <img width="600" src={logo} alt="Logo" />
         </div>
