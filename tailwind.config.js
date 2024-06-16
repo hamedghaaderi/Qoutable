@@ -18,6 +18,9 @@ export default {
       },
       colors: {
         "hblue": "#63b0ee",
+        "yellow": "#fdc500",
+        "blue": "#010C80",
+        "back": "#ffe7da",
       }
     },
   },
