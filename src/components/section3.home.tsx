@@ -1,4 +1,5 @@
 import Input from "./input";
+import LinkTo from "./link.to";
 
 const Section3Home = () => {
   return (
@@ -7,7 +8,7 @@ const Section3Home = () => {
         <h2 className="font-Agbalumo text-blue text-center text-2xl pb-10">
           Search in authors manually
         </h2>
-        <Input />
+        <Input button={<LinkTo />}/>
       </section>
     </>
   );
