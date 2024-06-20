@@ -8,20 +8,22 @@ export default {
       },
       width: {
         "120": "37.5rem",
+        "1/10": "12%",
+        "9/10": "88%",
       },
       height: {
         "100": "23.5rem",
       },
       fontFamily: {
-        "Agbalumo": "Agbalumo",
-        "Poppins": "Poppins",
+        Agbalumo: "Agbalumo",
+        Poppins: "Poppins",
       },
       colors: {
-        "hblue": "#63b0ee",
-        "yellow": "#fdc500",
-        "blue": "#010C80",
-        "back": "#ffe7da",
-      }
+        hblue: "#63b0ee",
+        yellow: "#fdc500",
+        blue: "#010C80",
+        back: "#ffe7da",
+      },
     },
   },
   plugins: [],
