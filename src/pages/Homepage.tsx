@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import Section1Home from "../components/section1.home";
 import Section2Home from "../components/section2.home";
 import Section3Home from "../components/section3.home";
@@ -12,6 +13,7 @@ const Homepage = () => {
         <Section3Home />
         <Section4Home />
       </main>
+      <Footer />
     </>
   );
 };

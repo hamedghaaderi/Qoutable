@@ -4,7 +4,7 @@ const Button = ({ children , href }: { children: string , href: string}) => {
   return (
     <>
       <Link to={href}>
-        <button className="bg-yellow p-3 rounded-xl text-sm">{children}</button>
+        <button className="bg-yellow text-blue p-3 rounded-xl text-sm">{children}</button>
       </Link>
     </>
   );
