@@ -7,10 +7,8 @@ const LinkTo = () => {
 
   return (
     <>
-      <Link to={"/search" + "?author=" + value}>
-        <button className="rounded-3xl rounded-l-none bg-yellow p-3 w-full h-full">
+      <Link className="rounded-3xl rounded-l-none bg-yellow p-3 h-full" to={"/search" + "?author=" + value}>
           <SearchIcon />
-        </button>
       </Link>
     </>
   );
