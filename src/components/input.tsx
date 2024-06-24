@@ -1,6 +1,6 @@
 import useValue from "../store/value";
 
-const Input = ({ button }: { button: any }) => {
+const Input = ({ button, className }: { button: any; className: string }) => {
   const { setValue } = useValue((state: any) => state.action);
   const handleChange = (e: any) => {
     setValue(e.target.value.trim());
@@ -8,7 +8,7 @@ const Input = ({ button }: { button: any }) => {
 
   return (
     <>
-      <div className="m-auto w-2/6 flex h-14">
+      <div className={className + " flex h-14"}>
         <input
           type="text"
           placeholder="Search Authors"

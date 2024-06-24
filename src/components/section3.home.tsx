@@ -8,7 +8,7 @@ const Section3Home = () => {
         <h2 className="font-Agbalumo text-blue text-center text-2xl pb-10">
           Search in authors manually
         </h2>
-        <Input button={<LinkTo />} />
+        <Input button={<LinkTo />} className={"w-2/6 m-auto"}/>
       </section>
     </>
   );
