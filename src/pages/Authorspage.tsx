@@ -1,9 +1,8 @@
 const AuthorsPage = () => {
   return (
     <>
-    
     </>
-  )
-}
+  );
+};
 
-export default AuthorsPage
+export default AuthorsPage;
