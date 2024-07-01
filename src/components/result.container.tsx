@@ -2,6 +2,7 @@ import useSearch from "../hook/Search";
 import IsLoading from "./isloading";
 import NoResult from "./noresult";
 import ResultItem from "./result.item";
+import ResultFor from "./resultfor";
 
 const ResultContainer = () => {
   const { data, isLoading, isError } = useSearch();
@@ -9,6 +10,7 @@ const ResultContainer = () => {
   return (
     <>
       <main className="bg-back px-20 py-12">
+        <ResultFor />
         {isLoading && <IsLoading />}
         {data?.data.results.map((item: any) => {
           return (

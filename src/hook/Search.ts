@@ -14,7 +14,7 @@ const useSearch = () => {
         .then((res) => res);
     },
   });
-  return { data, isLoading , isError };
+  return { data, isLoading , isError , queryParam };
 };
 
 export default useSearch;
