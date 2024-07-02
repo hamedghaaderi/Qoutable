@@ -25,9 +25,12 @@ export default {
         "back": "#ffe7da",
         "back2": "#e4b09a",
       },
-      gridTemplateColumns: {
-        "header": "1fr 2fr"
+      borderRadius: {
+        "percent": "100%"
       },
+      animation: {
+        "spin-slow": "spin 3s cubic-bezier(0.52, 0.06, 0.32, 0.99) 0s infinite normal forwards"
+      }
     },
   },
   plugins: [],

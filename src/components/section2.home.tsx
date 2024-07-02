@@ -1,13 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import documentCount from "../api/ducument.count";
+import useDocumentCount from "../hook/document.count";
 
 const Section2Home = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["document-count"],
-    queryFn: documentCount,
-    gcTime: Infinity,
-    refetchInterval: false
-  });
+  const { data, isLoading } = useDocumentCount();
 
   return (
     <>
@@ -19,19 +13,19 @@ const Section2Home = () => {
           <div className="h-32 rounded-xl bg-yellow flex flex-col justify-evenly items-center">
             <span className="text-blue font-Poppins text-lg">Qoutes</span>
             <span className="text-hblue font-Poppins text-base">
-              {isLoading ? "Loading..." :data?.data.quotes}
+              {isLoading ? "Loading..." : data?.data.quotes}
             </span>
           </div>
           <div className="h-32 rounded-xl bg-yellow flex flex-col justify-evenly items-center">
             <span className="text-blue font-Poppins text-lg">Authors</span>
             <span className="text-hblue font-Poppins text-base">
-              {isLoading ? "Loading..." :data?.data.authors}
+              {isLoading ? "Loading..." : data?.data.authors}
             </span>
           </div>
           <div className="h-32 rounded-xl bg-yellow flex flex-col justify-evenly items-center">
             <span className="text-blue font-Poppins text-lg">Tags</span>
             <span className="text-hblue font-Poppins text-base">
-              {isLoading ? "Loading..." :data?.data.tags}
+              {isLoading ? "Loading..." : data?.data.tags}
             </span>
           </div>
         </div>

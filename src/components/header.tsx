@@ -1,18 +1,23 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo-quotable.png";
 import Button from "./button";
 import Input from "./input";
+interface IHeader {
+  btn: any;
+  link: string;
+  innerText: string;
+}
 
-const Header = ({btn}: {btn: any}) => {
+const Header = ({ btn, link, innerText }: IHeader) => {
   return (
     <>
-      <header className="bg-back2 py-6 px-20 grid grid-cols-header grid-rows-1 gap-x-96">
-        <div>
+      <header className="bg-back2 py-6 px-20 flex flex-row justify-between">
+        <Link to={"/"}>
           <img width="120" src={logo} alt="Logo" />
-        </div>
-        <div className="flex flex-row items-center justify-between">
-          <Input button={btn} className={"w-1/2"}/>
-          <Button href={"/"}>Home</Button>
-          <Button href={"/random"}>Random Qoute</Button>
+        </Link>
+        <div className="w-1/2 flex flex-row items-center justify-between">
+          <Input button={btn} className={"w-4/6"} />
+          <Button href={link}>{innerText}</Button>
         </div>
       </header>
     </>
