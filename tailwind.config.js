@@ -25,9 +25,6 @@ export default {
         "back": "#ffe7da",
         "back2": "#e4b09a",
       },
-      gridTemplateColumns: {
-        "header": "1fr 2fr"
-      },
       borderRadius: {
         "percent": "100%"
       },

@@ -6,7 +6,11 @@ import ResultContainer from "../components/result.container";
 const SearchPage = () => {
   return (
     <>
-      <Header btn={<ButtonInput />} />
+      <Header
+        btn={<ButtonInput />}
+        link={"/random"}
+        innerText={"Random Qoute"}
+      />
       <ResultContainer />
       <Footer />
     </>
