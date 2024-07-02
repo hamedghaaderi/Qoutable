@@ -1,6 +1,10 @@
 import useValue from "../store/value";
+interface IInput {
+  button: any;
+  className: string;
+}
 
-const Input = ({ button, className }: { button: any; className: string }) => {
+const Input = ({ button, className }: IInput) => {
   const { setValue } = useValue((state: any) => state.action);
   const handleChange = (e: any) => {
     setValue(e.target.value.trim());
