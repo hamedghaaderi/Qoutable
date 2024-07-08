@@ -6,10 +6,11 @@ import ResultItem from "../components/result.item";
 import useListAuthors from "../hook/list.authors";
 import Pagination from "../components/pagination";
 import AscDesc from "../components/ascdesc";
+import ToTop from "../components/totop";
 
 const AuthorsPage = () => {
   const { isLoading, data } = useListAuthors();
-
+  
   return (
     <>
       <Header btn={<LinkTo />} link={"/random"} innerText={"Random Qoute"} />
@@ -29,7 +30,13 @@ const AuthorsPage = () => {
             );
           })
         )}
-        {data?.data && <Pagination currentPage={data?.data.page} pageCount={data?.data.totalPages} />}
+        {data?.data && (
+          <Pagination
+            currentPage={data?.data.page}
+            pageCount={data?.data.totalPages}
+          />
+        )}
+        <ToTop />
       </main>
       <Footer />
     </>

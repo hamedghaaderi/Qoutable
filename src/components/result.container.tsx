@@ -4,6 +4,7 @@ import NoResult from "./noresult";
 import Pagination from "./pagination";
 import ResultItem from "./result.item";
 import ResultFor from "./resultfor";
+import ToTop from "./totop";
 
 const ResultContainer = () => {
   const { data, isLoading, isError } = useSearch();
@@ -28,6 +29,7 @@ const ResultContainer = () => {
         {data?.data.totalPages > 1 && (
           <Pagination currentPage={data?.data.page} pageCount={data?.data.totalPages} />
         )}
+        <ToTop />
       </main>
     </>
   );

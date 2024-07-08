@@ -6,10 +6,28 @@
     font-family: "Agbalumo";
     src: url("./assets/fonts/Agbalumo-Regular.woff2") format("woff2");
   }
-}
-@layer base {
   @font-face {
     font-family: "Poppins";
     src: url("./assets/fonts/poppins-regular-webfont.woff2") format("woff2");
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      bottom: -56px;
+    }
+    100% {
+      opacity: 1;
+      bottom: 24px;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      bottom: 24px;
+    }
+    100% {
+      opacity: 0;
+      bottom: -56px;
+    }
   }
 }
