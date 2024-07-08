@@ -29,7 +29,7 @@ export default {
         "percent": "100%"
       },
       animation: {
-        "spin-slow": "spin 3s cubic-bezier(0.52, 0.06, 0.32, 0.99) 0s infinite normal forwards",
+        "loading": "loading 3s cubic-bezier(0.52, 0.06, 0.32, 0.99) 0s infinite normal forwards",
         "fadein": "fadeIn 0.3s",
         "fadeout": "fadeOut 0.3s"
       }
