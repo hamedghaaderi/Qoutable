@@ -4,13 +4,14 @@ import { useSearchParams } from "react-router-dom";
 
 const useSearch = () => {
   const [searchParams] = useSearchParams();
-  const queryParam: string = searchParams.get("author") ?? "";
+  const queryParam = searchParams.get("author") ?? "";
+  const pageParam = searchParams.get("page") ?? "1";
 
   const { data, isLoading , isError } = useQuery({
-    queryKey: [queryParam],
+    queryKey: [queryParam,pageParam],
     queryFn: () => {
       return config
-        .get(`/search/authors?query=${queryParam}`)
+        .get(`/search/authors?query=${queryParam}&page=${pageParam}`)
         .then((res) => res);
     },
   });

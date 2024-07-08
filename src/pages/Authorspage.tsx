@@ -4,6 +4,7 @@ import IsLoading from "../components/isloading";
 import LinkTo from "../components/link.to";
 import ResultItem from "../components/result.item";
 import useListAuthors from "../hook/list.authors";
+import Pagination from "../components/pagination";
 import AscDesc from "../components/ascdesc";
 
 const AuthorsPage = () => {
@@ -28,6 +29,7 @@ const AuthorsPage = () => {
             );
           })
         )}
+        {data?.data && <Pagination currentPage={data?.data.page} pageCount={data?.data.totalPages} />}
       </main>
       <Footer />
     </>
