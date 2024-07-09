@@ -30,7 +30,7 @@ const AuthorInfo = ({ name, desc, bio, link, totalQoutes }: IAuthorInfo) => {
           <div className="w-64 self-end flex flex-row items-center justify-between">
             <Button href={"/authors"}>List Authors</Button>
             <a
-              className="pl-6 py-2 border-l-2 border-l-hblue flex w-28 justify-between text-lg items-center"
+              className="pl-6 py-2 border-l-2 border-l-slate-300 flex justify-between text-lg items-center"
               href={link}
             >
               Explore <ArrowIcon />

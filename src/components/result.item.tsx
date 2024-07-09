@@ -13,7 +13,7 @@ const ResultItem = ({ name, desc, slug }: IResultItem) => {
         <h2 className="text-2xl text-blue font-Poppins">{name}</h2>
         <span className="text-xl text-hblue font-Poppins">{desc}</span>
         <Link
-          className="self-end flex w-28 justify-between text-lg items-center"
+          className="self-end flex justify-between text-lg items-center"
           to={"/author" + `/${slug}`}
         >
           More info <ArrowIcon />
