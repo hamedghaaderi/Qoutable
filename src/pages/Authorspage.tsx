@@ -9,6 +9,7 @@ import AscDesc from "../components/ascdesc";
 import ToTop from "../components/totop";
 
 const AuthorsPage = () => {
+  scrollTo({ top: 0, behavior: "smooth" });
   const { isLoading, data } = useListAuthors();
   
   return (

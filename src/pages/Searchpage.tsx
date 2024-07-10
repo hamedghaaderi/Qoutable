@@ -4,6 +4,7 @@ import ButtonInput from "../components/button.input";
 import ResultContainer from "../components/result.container";
 
 const SearchPage = () => {
+  scrollTo({ top: 0, behavior: "smooth" });
   return (
     <>
       <Header

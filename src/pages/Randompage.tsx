@@ -4,6 +4,7 @@ import LinkTo from "../components/link.to";
 import RandomQoute from "../components/randomqoute";
 
 const RandomPage = () => {
+  scrollTo({ top: 0, behavior: "smooth" });
   return (
     <>
       <Header btn={<LinkTo />} innerText={"List Authors"} link={"/authors"} />
