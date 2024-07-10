@@ -17,8 +17,8 @@ const ToTop = () => {
         onClick={handleClick}
         className={
           show
-            ? "bg-yellow p-2 animate-fadein opacity-100 fixed right-6 bottom-6 rounded-percent"
-            : "bg-yellow p-2 animate-fadeout opacity-0 fixed right-6 bottom-6 rounded-percent"
+            ? "bg-yellow p-2 animate-fadein opacity-100 fixed block right-6 bottom-6 rounded-percent"
+            : "bg-yellow p-2 animate-fadeout opacity-0 fixed hidden right-6 rounded-percent"
         }
       >
         <ArrowUpIcon />

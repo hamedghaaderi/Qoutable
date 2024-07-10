@@ -12,20 +12,24 @@
   }
   @keyframes fadeIn {
     0% {
+      display: none;
       opacity: 0;
       bottom: -56px;
     }
     100% {
+      display: block;
       opacity: 1;
       bottom: 24px;
     }
   }
   @keyframes fadeOut {
     0% {
+      display: block;
       opacity: 1;
       bottom: 24px;
     }
     100% {
+      display: none;
       opacity: 0;
       bottom: -56px;
     }
