@@ -12,7 +12,9 @@ const SearchPage = () => {
         link={"/random"}
         innerText={"Random Qoute"}
       />
-      <ResultContainer />
+      <main className="bg-back px-20 py-12">
+        <ResultContainer />
+      </main>
       <Footer />
     </>
   );
