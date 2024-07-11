@@ -26,8 +26,11 @@ const ResultContainer = () => {
         })}
         {isError && <NoResult />}
         {data?.data.count === 0 && <NoResult />}
-        {data?.data.totalPages > 1 && (
-          <Pagination currentPage={data?.data.page} pageCount={data?.data.totalPages} />
+        {data?.data.totalPages > 1 && data?.data.count !== 0 && data?.data && (
+          <Pagination
+            currentPage={data?.data.page}
+            pageCount={data?.data.totalPages}
+          />
         )}
         <ToTop />
       </main>
