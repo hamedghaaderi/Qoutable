@@ -2,6 +2,7 @@ import { useState } from "react";
 import useTag from "../hook/tag";
 import CloseIcon from "./closeicon";
 import OpenIcon from "./openicon";
+import useFilter from "../store/filters";
 
 interface IFilter {
   onClose: any;
@@ -9,6 +10,11 @@ interface IFilter {
 }
 
 const Filter = ({ onClose, open }: IFilter) => {
+  const { setQoute, setAuthor, setTag } = useFilter(
+    (state: any) => state.action
+  );
+  const { qoute, tag, author } = useFilter((state: any) => state);
+
   const [showList, setShowList] = useState(false);
   const { data } = useTag();
   open && (document.body.style.overflow = "hidden");
@@ -23,7 +29,20 @@ const Filter = ({ onClose, open }: IFilter) => {
     const element: any = document.getElementById("tag");
     element.innerHTML = e.target.innerText;
     setShowList(false);
+    setTag(e.target.innerText);
   };
+  const handleChangeAuthor = (e: any) => {
+    setAuthor(e.target.value.trim());
+  };
+  const handleChangeQoute = (e: any) => {
+    setQoute(e.target.value.trim());
+  };
+  const handleclick = () => {
+    const element: any = document.getElementById("tag");
+    element.innerHTML = "Select Tag";
+    setShowList(false);
+    setTag("");
+  }
   return (
     <>
       <div
@@ -49,10 +68,12 @@ const Filter = ({ onClose, open }: IFilter) => {
               </label>
               <input
                 placeholder="True friendship is ..."
+                onChange={handleChangeQoute}
                 className="rounded-3xl p-3 px-5 outline-none"
                 id="qoute"
                 name="qoute"
                 type="text"
+                value={qoute}
               />
             </div>
             <div className="flex flex-row justify-between">
@@ -62,10 +83,12 @@ const Filter = ({ onClose, open }: IFilter) => {
                 </label>
                 <input
                   placeholder="George Washington"
+                  onChange={handleChangeAuthor}
                   className="rounded-3xl p-3 px-5 outline-none"
                   id="author"
                   name="author"
                   type="text"
+                  value={author}
                 />
               </div>
               <div className="flex flex-col w-48% relative justify-between">
@@ -75,17 +98,18 @@ const Filter = ({ onClose, open }: IFilter) => {
                   className="bg-white h-12 flex flex-row justify-between rounded-3xl p-3 pl-5 pr-4"
                 >
                   <p id="tag" className="text-black">
-                    Select Tag
+                    {tag === "" ? "Select Tag" : tag}
                   </p>
                   <OpenIcon />
                 </div>
                 {showList && (
                   <div className="max-h-56 w-full bg-white px-5 py-3 absolute bottom-14 rounded-2xl pr-3">
                     <div className="overflow-scroll h-200px">
+                      <div onClick={handleclick} className="mb-3 text-blue">Empty field</div>
                       {data?.data.map((tag: any) => {
                         return (
                           <div
-                            className="first:mt-0 last:mb-0 my-3 text-blue"
+                            className="last:mb-0 my-3 text-blue"
                             onClick={handleCloseList}
                             key={tag._id}
                           >
