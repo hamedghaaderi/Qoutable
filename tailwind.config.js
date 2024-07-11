@@ -26,7 +26,8 @@ export default {
         "blue": "#010C80",
         "back": "#ffe7da",
         "back2": "#e4b09a",
-        "transparent": "rgba(0, 0, 0, 0.25)"
+        "transparent": "rgba(0, 0, 0, 0.25)",
+        "attention": "#fefce8"
       },
       borderRadius: {
         "percent": "100%"
