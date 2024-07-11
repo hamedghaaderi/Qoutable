@@ -7,15 +7,17 @@ import useListAuthors from "../hook/list.authors";
 import Pagination from "../components/pagination";
 import AscDesc from "../components/ascdesc";
 import ToTop from "../components/totop";
+import NoResult from "../components/noresult";
 
 const AuthorsPage = () => {
+  scrollTo({ top: 0, behavior: "smooth" });
   const { isLoading, data } = useListAuthors();
   
   return (
     <>
       <Header btn={<LinkTo />} link={"/random"} innerText={"Random Qoute"} />
       <main className="bg-back px-20 py-12">
-        {data?.data && <AscDesc />}
+        {data?.data.count !== 0 && data?.data && <AscDesc />}
         {isLoading ? (
           <IsLoading />
         ) : (
@@ -30,7 +32,8 @@ const AuthorsPage = () => {
             );
           })
         )}
-        {data?.data && (
+        {data?.data.count === 0 && <NoResult />}
+        {data?.data.count !== 0 && data?.data && (
           <Pagination
             currentPage={data?.data.page}
             pageCount={data?.data.totalPages}

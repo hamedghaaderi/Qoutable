@@ -24,7 +24,6 @@ const Pagination = ({ pageCount, currentPage }: IPagination) => {
         ? `page=${page}`
         : `${queryAuthor}${queryOrder}page=${page}`;
     setSearchParams(query);
-    scrollTo({ top: 0, behavior: "smooth" });
   };
   const handleNext = () => {
     const page = Number(pageQuery) + 1;
@@ -35,7 +34,6 @@ const Pagination = ({ pageCount, currentPage }: IPagination) => {
         ? `page=${page}`
         : `${queryAuthor}${queryOrder}page=${page}`;
     setSearchParams(query);
-    scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

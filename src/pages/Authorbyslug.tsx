@@ -7,6 +7,7 @@ import NoResult from "../components/noresult";
 import useGetAuthor from "../hook/get.author";
 
 const AuthorBySlug = () => {
+  scrollTo({ top: 0, behavior: "smooth" });
   const { data, isLoading, isError } = useGetAuthor();
   const info = data?.data;
   
