@@ -7,9 +7,13 @@ import useRandomQoute from "../hook/random.qoute";
 import { useQueryClient } from "@tanstack/react-query";
 import IsLoading from "./isloading";
 import NoResult from "./noresult";
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import Filter from "./filter";
 const speech = window.speechSynthesis;
 
 const RandomQoute = () => {
+  const [showModal, setShowModal] = useState(false);
   const { data, isLoading, isError } = useRandomQoute();
   const info = data?.data;
   const client = useQueryClient();
@@ -25,6 +29,7 @@ const RandomQoute = () => {
   const handleCopy = () => {
     navigator.clipboard.writeText(info.content);
   };
+  !showModal && (document.body.style.overflow = "visible")
 
   return (
     <>
@@ -48,19 +53,19 @@ const RandomQoute = () => {
             <ul className="flex flex-row justify-between items-center">
               <li
                 onClick={handleSpeak}
-                className="rounded-percent p-3 bg-yellow mr-3"
+                className="rounded-percent cursor-pointer p-3 bg-yellow mr-3"
               >
                 <SpeakerIcon />
               </li>
               <li
                 onClick={handleCopy}
-                className="rounded-percent p-3 bg-yellow"
+                className="rounded-percent cursor-pointer p-3 bg-yellow"
               >
                 <CopyIcon />
               </li>
             </ul>
             <div className="flex flex-row justify-between items-center">
-              <button className="p-4 mr-1 bg-yellow rounded-3xl rounded-r-none">
+              <button onClick={()=> setShowModal(true)} className="p-4 mr-1 bg-yellow rounded-3xl rounded-r-none">
                 <FilterIcon />
               </button>
               <button
@@ -74,6 +79,11 @@ const RandomQoute = () => {
         </section>
       )}
       {isError && <NoResult />}
+      {showModal &&
+          createPortal(
+            <Filter open={showModal} onClose={() => setShowModal(false)} />,
+            document.body
+          )}
     </>
   );
 };

@@ -16,7 +16,6 @@ const SelectPage = ({ number, page }: ISelectPage) => {
         ? `page=${e.target.innerText}`
         : `${queryAuthor}${queryOrder}page=${e.target.innerText}`;
     setSearchParams(query);
-    // scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
