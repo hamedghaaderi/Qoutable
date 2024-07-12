@@ -5,6 +5,14 @@ interface IFilter {
   handleCloseList: (e: any) => void;
   handleClick: () => void;
 }
+interface ITag {
+  _id: string;
+  name: string;
+  slug: string;
+  quoteCount: number;
+  dateAdded: string;
+  dateModified: string;
+}
 
 const List = ({ data, handleCloseList, handleClick }: IFilter) => {
   return (
@@ -14,7 +22,7 @@ const List = ({ data, handleCloseList, handleClick }: IFilter) => {
           <div onClick={handleClick} className="mb-3 text-blue">
             Empty field
           </div>
-          {data.map((tag: any) => (
+          {data.map((tag: ITag) => (
             <ListItem
               key={tag._id}
               handleCloseList={handleCloseList}
