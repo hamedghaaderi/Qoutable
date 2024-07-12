@@ -38,22 +38,35 @@ const RandomQoute = () => {
             <AttentionIcon />
           </div>
           <p className="font-Poppins text-blue text-lg">
-            No qoutes were found matching your filters. Check your filters and click the "New Qoute" button again.
+            No qoutes were found matching your filters. Check your filters and
+            click the "New Qoute" button again.
           </p>
         </section>
       )}
       <section className="bg-white rounded-3xl p-10">
         <div className="flex flex-col pb-7 items-center border-b-2 border-b-slate-300">
-          <p className="text-2xl text-blue font-Poppins mb-7 text-center">
+          <p className="text-2xl text-blue font-Poppins mb-10 text-center">
             {isLoading ? "Loading ..." : info.content}
           </p>
-          <Link
-            className="text-xl self-end text-black font-Poppins flex justify-between items-center"
-            to={"/author" + (isLoading ? "" : `/${info.authorSlug}`)}
-          >
-            {isLoading ? "" : info.author}
-            <ArrowIcon />
-          </Link>
+          <div className="flex w-full flex-row justify-between items-center">
+            <div className="flex flex-row">
+              {data?.data.tags.map((tag: any, i: number) => (
+                <div
+                  className="font-Poppins text-blue bg-hblue text-sm w-fit rounded-xl p-2 mr-2 last:m-0"
+                  key={i}
+                >
+                  #{tag}
+                </div>
+              ))}
+            </div>
+            <Link
+              className="text-xl self-end text-black font-Poppins flex justify-between items-center"
+              to={"/author" + (isLoading ? "" : `/${info.authorSlug}`)}
+            >
+              {isLoading ? "" : info.author}
+              <ArrowIcon />
+            </Link>
+          </div>
         </div>
         <div className="mt-7 flex flex-row justify-between items-center">
           <ul className="flex flex-row justify-between items-center">
