@@ -32,10 +32,10 @@ const Filter = ({ onClose, open }: IFilter) => {
     setTag(e.target.innerText);
   };
   const handleChangeAuthor = (e: any) => {
-    setAuthor(e.target.value.trim());
+    setAuthor(e.target.value);
   };
   const handleChangeQoute = (e: any) => {
-    setQoute(e.target.value.trim());
+    setQoute(e.target.value);
   };
   const handleclick = () => {
     const element: any = document.getElementById("tag");
