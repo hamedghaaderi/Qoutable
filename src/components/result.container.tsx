@@ -5,6 +5,17 @@ import Pagination from "./pagination";
 import ResultItem from "./result.item";
 import ResultFor from "./resultfor";
 import ToTop from "./totop";
+interface IItem {
+  _id: string;
+  name: string;
+  link: string;
+  bio: string;
+  description: string;
+  quoteCount: number;
+  slug: string;
+  dateAdded: string;
+  dateModified: string;
+}
 
 const ResultContainer = () => {
   const { data, isLoading, isError } = useSearch();
@@ -13,7 +24,7 @@ const ResultContainer = () => {
     <>
       <ResultFor />
       {isLoading && <IsLoading />}
-      {data?.data.results.map((item: any) => {
+      {data?.data.results.map((item: IItem) => {
         return (
           <ResultItem
             key={item._id}

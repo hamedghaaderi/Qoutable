@@ -2,8 +2,8 @@ import ListItem from "./list.item";
 
 interface IFilter {
   data: any;
-  handleCloseList: any;
-  handleClick: any;
+  handleCloseList: (e: any) => void;
+  handleClick: () => void;
 }
 
 const List = ({ data, handleCloseList, handleClick }: IFilter) => {

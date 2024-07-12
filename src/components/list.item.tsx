@@ -1,6 +1,6 @@
 interface IListItem {
   name: string;
-  handleCloseList: any;
+  handleCloseList: (e: any) => void;
 }
 
 const ListItem = ({ name, handleCloseList }: IListItem) => {

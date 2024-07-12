@@ -6,7 +6,7 @@ import useFilter from "../store/filters";
 import List from "./list";
 
 interface IFilter {
-  onClose: any;
+  onClose: () => void;
   open: boolean;
 }
 

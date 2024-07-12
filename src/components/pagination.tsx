@@ -49,7 +49,7 @@ const Pagination = ({ pageCount, currentPage }: IPagination) => {
         >
           prev
         </button>
-        {pages.map((page) => {
+        {pages.map((page: number) => {
           return <SelectPage key={page} number={`${page}`} page={pageQuery} />;
         })}
         <button

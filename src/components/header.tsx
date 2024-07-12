@@ -3,7 +3,7 @@ import logo from "../assets/images/logo-quotable.png";
 import Button from "./button";
 import Input from "./input";
 interface IHeader {
-  btn: any;
+  btn: JSX.Element;
   link: string;
   innerText: string;
 }
