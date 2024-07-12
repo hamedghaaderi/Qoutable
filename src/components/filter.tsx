@@ -3,9 +3,10 @@ import useTag from "../hook/tag";
 import CloseIcon from "./closeicon";
 import OpenIcon from "./openicon";
 import useFilter from "../store/filters";
+import List from "./list";
 
 interface IFilter {
-  onClose: any;
+  onClose: () => void;
   open: boolean;
 }
 
@@ -14,7 +15,6 @@ const Filter = ({ onClose, open }: IFilter) => {
     (state: any) => state.action
   );
   const { qoute, tag, author } = useFilter((state: any) => state);
-
   const [showList, setShowList] = useState(false);
   const { data } = useTag();
   open && (document.body.style.overflow = "hidden");
@@ -32,17 +32,17 @@ const Filter = ({ onClose, open }: IFilter) => {
     setTag(e.target.innerText);
   };
   const handleChangeAuthor = (e: any) => {
-    setAuthor(e.target.value.trim());
+    setAuthor(e.target.value);
   };
   const handleChangeQoute = (e: any) => {
-    setQoute(e.target.value.trim());
+    setQoute(e.target.value);
   };
-  const handleclick = () => {
+  const handleClick = () => {
     const element: any = document.getElementById("tag");
     element.innerHTML = "Select Tag";
     setShowList(false);
     setTag("");
-  }
+  };
   return (
     <>
       <div
@@ -103,22 +103,11 @@ const Filter = ({ onClose, open }: IFilter) => {
                   <OpenIcon />
                 </div>
                 {showList && (
-                  <div className="max-h-56 w-full bg-white px-5 py-3 absolute bottom-14 rounded-2xl pr-3">
-                    <div className="overflow-scroll h-200px">
-                      <div onClick={handleclick} className="mb-3 text-blue">Empty field</div>
-                      {data?.data.map((tag: any) => {
-                        return (
-                          <div
-                            className="last:mb-0 my-3 text-blue"
-                            onClick={handleCloseList}
-                            key={tag._id}
-                          >
-                            {tag.name}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <List
+                    data={data?.data}
+                    handleCloseList={handleCloseList}
+                    handleClick={handleClick}
+                  />
                 )}
               </div>
             </div>

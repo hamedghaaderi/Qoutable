@@ -8,6 +8,17 @@ import Pagination from "../components/pagination";
 import AscDesc from "../components/ascdesc";
 import ToTop from "../components/totop";
 import NoResult from "../components/noresult";
+interface IItem {
+  _id: string;
+  name: string;
+  link: string;
+  bio: string;
+  description: string;
+  quoteCount: number;
+  slug: string;
+  dateAdded: string;
+  dateModified: string;
+}
 
 const AuthorsPage = () => {
   scrollTo({ top: 0, behavior: "smooth" });
@@ -21,7 +32,7 @@ const AuthorsPage = () => {
         {isLoading ? (
           <IsLoading />
         ) : (
-          data?.data.results.map((item: any) => {
+          data?.data.results.map((item: IItem) => {
             return (
               <ResultItem
                 key={item._id}

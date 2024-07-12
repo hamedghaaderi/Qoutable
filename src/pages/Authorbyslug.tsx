@@ -9,7 +9,6 @@ import useGetAuthor from "../hook/get.author";
 const AuthorBySlug = () => {
   scrollTo({ top: 0, behavior: "smooth" });
   const { data, isLoading, isError } = useGetAuthor();
-  const info = data?.data;
   
   return (
     <>
@@ -18,11 +17,11 @@ const AuthorBySlug = () => {
         {isLoading && <IsLoading />}
         {data && (
           <AuthorInfo
-            name={info.name}
-            desc={info.description}
-            bio={info.bio}
-            link={info.link}
-            totalQoutes={info.quoteCount}
+            name={data?.data.name}
+            desc={data?.data.description}
+            bio={data?.data.bio}
+            link={data?.data.link}
+            totalQoutes={data?.data.quoteCount}
           />
         )}
         {isError && <NoResult />}
